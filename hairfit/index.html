@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>헤어핏 증모술 교육 안내</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet"><style id="css">
+/* layout: one scrolling column (max 1040px), sticky section nav, sticky apply bar on phones. Single light theme by choice (brand cream + brown). */
+:root{
+  --bg:#fbf7f2; --paper:#ffffff; --ink:#1f1a17; --sub:#5b4f47; --accent:#8a5a3c; --accent-deep:#6f4529;
+  --line:#e4d6c8; --soft:#f3e9df; --green:#2f5d2a;
+  --f-display:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --f-body:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.65;word-break:keep-all;overflow-wrap:anywhere;padding-bottom:88px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+a{color:var(--accent-deep)}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+.notice{background:var(--accent-deep);color:#fff;text-align:center;font-size:14px;font-weight:500;padding:9px 16px}
+header.hero{padding:36px 0 28px}
+.brand{letter-spacing:.42em;font-size:13px;font-weight:500;color:var(--sub)}
+.hero h1{font-family:var(--f-display);font-weight:900;font-size:clamp(30px,6.2vw,54px);line-height:1.2;letter-spacing:-.02em;margin-top:10px;text-wrap:balance}
+.hero h1 span{color:var(--accent)}
+.hero p.intro{margin-top:16px;color:var(--sub);max-width:40em;white-space:pre-line}
+.hero .sign{margin-top:10px;font-weight:700;font-size:15px}
+.cta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 22px;border-radius:8px;border:1px solid var(--accent-deep);background:var(--accent-deep);color:#fff;font-weight:700;text-decoration:none}
+.btn:hover{background:#5c381f}
+.btn.ghost{background:transparent;color:var(--accent-deep)}
+.btn.ghost:hover{background:var(--soft)}
+.btn.off{background:#cdbfb3;border-color:#cdbfb3;color:#fff;cursor:not-allowed}
+.btn.sm{min-height:36px;padding:0 14px;font-size:14px}
+nav.tabs{position:sticky;top:0;z-index:5;background:rgba(251,247,242,.96);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+nav.tabs .wrap{display:flex;gap:4px;overflow-x:auto}
+nav.tabs a{flex:none;padding:13px 12px;font-size:15px;font-weight:700;color:var(--sub);text-decoration:none}
+nav.tabs a:hover{color:var(--accent-deep)}
+section{padding:44px 0 8px}
+h2{font-family:var(--f-display);font-size:24px;font-weight:900;color:var(--accent);display:flex;align-items:center;gap:16px;letter-spacing:-.01em}
+h2::after{content:"";flex:1;height:1px;background:var(--line)}
+.lead{color:var(--sub);margin-top:6px;font-size:15px}
+/* schedule */
+.sch-wrap{margin-top:18px;overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--paper)}
+table.sch{width:100%;min-width:680px;border-collapse:collapse;table-layout:fixed;font-variant-numeric:tabular-nums}
+.sch th,.sch td{border-bottom:1px solid var(--line);border-right:1px solid var(--line);text-align:center;vertical-align:middle;padding:12px 6px}
+.sch tr>*:last-child{border-right:0}.sch tbody tr:last-child>*{border-bottom:0}
+.sch thead th{background:var(--soft);font-weight:700;font-size:16px}
+.sch tbody th{font-weight:700;font-size:16px;width:23%}
+.sch .cell+.cell{border-top:1px solid var(--line);margin-top:10px;padding-top:10px}
+.sch .cell b{display:block;font-size:16px}
+.sch .cell span{display:block;font-size:14px;color:var(--accent)}
+.sch .none{color:#b9aca1}
+.sch tr.dan th,.sch tr.dan .cell span,.sch tr.dan .cell b{color:var(--green)}
+.days{display:none;margin-top:18px;gap:12px;flex-direction:column}
+.day{background:var(--paper);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.day h3{background:var(--soft);padding:10px 16px;font-size:16px}
+.day ul{list-style:none}
+.day li{display:flex;justify-content:space-between;gap:12px;padding:10px 16px;border-top:1px solid var(--line);font-size:15px}
+.day li em{font-style:normal;color:var(--sub);display:block;font-size:13px}
+.day li span{color:var(--accent);font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:500}
+.day li.dan b,.day li.dan span{color:var(--green)}
+@media (max-width:640px){.sch-wrap{display:none}.days{display:flex}}
+.note{margin-top:12px;font-size:15px;color:var(--sub)}
+/* courses */
+.courses{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:14px;margin-top:18px}
+.course{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:20px;display:flex;flex-direction:column;gap:12px}
+.course h3{font-size:20px;font-weight:900;line-height:1.3}
+.course h3 small{display:block;font-size:14px;color:var(--accent);font-weight:700}
+.chip{align-self:flex-start;background:var(--soft);color:var(--accent-deep);font-size:13px;font-weight:700;border-radius:999px;padding:3px 12px}
+.course .target{color:var(--sub);font-size:15px;white-space:pre-line}
+.course ul{list-style:none;border-top:1px solid var(--line);padding-top:12px;display:flex;flex-direction:column;gap:8px;font-size:15px}
+.course ul li{display:flex;gap:10px}
+.course ul li b{flex:none;min-width:3.6em;color:var(--accent-deep)}
+.price{margin-top:auto;border-top:1px solid var(--line);padding-top:12px}
+.price strong{font-size:26px;font-weight:900;color:var(--accent-deep);font-variant-numeric:tabular-nums}
+.price .vat{font-size:14px;color:var(--sub);margin-left:8px}
+.price p{font-size:14px;color:var(--sub);white-space:pre-line}
+.short{margin-top:14px;background:var(--soft);border-radius:10px;padding:14px 18px;font-size:15px}
+.short b{color:var(--accent-deep);margin-right:10px}
+/* key-value */
+dl.kv{margin-top:14px;background:var(--paper);border:1px solid var(--line);border-radius:10px}
+dl.kv>div{display:grid;grid-template-columns:minmax(120px,30%) 1fr;gap:6px 18px;padding:14px 18px;border-top:1px solid var(--line)}
+dl.kv>div:first-child{border-top:0}
+dl.kv dt{font-weight:700;color:var(--accent-deep)}
+dl.kv dd{white-space:pre-line}
+@media (max-width:520px){dl.kv>div{grid-template-columns:1fr}}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0 28px}
+/* apply */
+.steps{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:18px;counter-reset:s}
+.steps li{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:16px;counter-increment:s;font-size:15px;color:var(--sub)}
+.steps li::before{content:counter(s);display:inline-flex;width:26px;height:26px;border-radius:50%;background:var(--accent-deep);color:#fff;font-weight:700;font-size:14px;align-items:center;justify-content:center;margin-right:8px}
+.steps li b{color:var(--ink);font-size:16px}
+.steps li p{margin-top:6px}
+.deposit{margin-top:14px;background:var(--paper);border:2px solid var(--accent);border-radius:10px;padding:18px 20px;display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;justify-content:space-between}
+.deposit p{color:var(--sub);font-size:15px;white-space:pre-line}
+.deposit .acct{font-size:19px;font-weight:900;font-variant-numeric:tabular-nums;color:var(--ink)}
+.apply-box{margin-top:18px;text-align:center;padding:26px 16px;background:var(--soft);border-radius:10px}
+.apply-box p{color:var(--sub);font-size:15px;margin-top:10px}
+footer{margin-top:48px;border-top:1px solid var(--line);padding:22px 0;text-align:center;font-size:14px;color:var(--sub)}
+footer button{background:none;border:0;color:var(--sub);text-decoration:underline;margin-left:10px;font-size:14px}
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:6;background:rgba(255,255,255,.97);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));display:flex;gap:12px;align-items:center;justify-content:center}
+.bar span{font-size:14px;color:var(--sub);font-weight:500}
+.bar .btn{flex:0 1 320px}
+@media (max-width:520px){.bar span{display:none}.bar .btn{flex:1}}
+/* editor */
+.ed{position:fixed;inset:0;z-index:20;background:rgba(31,26,23,.45);display:flex;justify-content:flex-end}
+.ed[hidden]{display:none}
+.ed .panel{width:min(620px,100%);height:100%;background:var(--bg);display:flex;flex-direction:column}
+.ed .top{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 18px;border-bottom:1px solid var(--line);background:var(--paper)}
+.ed .top b{font-size:17px}
+.ed .body{flex:1;overflow-y:auto;padding:8px 18px 40px}
+.ed details{border-bottom:1px solid var(--line);padding:12px 0}
+.ed summary{font-weight:900;color:var(--accent-deep);cursor:pointer;font-size:16px}
+.ed label{display:block;font-size:13px;font-weight:700;color:var(--sub);margin-top:10px}
+.ed input,.ed textarea{width:100%;font:inherit;font-size:15px;padding:8px 10px;border:1px solid #cdbfb3;border-radius:6px;background:#fff;color:var(--ink);margin-top:3px}
+.ed textarea{min-height:76px;resize:vertical}
+.ed .item{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:6px 12px 12px;margin-top:10px}
+.ed .item .row{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:0 10px}
+.ed .tools{display:flex;gap:6px;justify-content:flex-end;margin-top:8px}
+.ed .tools button,.ed .add{border:1px solid #cdbfb3;background:#fff;border-radius:6px;padding:4px 10px;font-size:13px;color:var(--sub)}
+.ed .add{margin-top:10px;padding:8px 14px;font-weight:700;color:var(--accent-deep)}
+.ed .msg{font-size:14px;color:var(--sub)}
+.ed .msg.err{color:#a3261b;font-weight:700}
+</style></head><body><div id="root"></div><script id="state" type="application/json">{"brand":"HAIR FIT","cohort":"79기","title":"헤어핏 증모술 교육","intro":"안녕하세요, 블랭크 아카데미 은파 원장입니다.\n원장님들이 오랜 시간 다듬어 오신 손길에 증모술이 더해져, 머리숱 때문에 망설이던 고객님께도 원하는 스타일을 선물할 수 있기를 바랍니다. 그 순간, 원장님만의 미용이 한층 더 빛나기를 바라는 마음으로 가르칩니다.","sign":"은파 원장 드림","notice":"신청서 작성 후 입금 순으로 접수하며, 정원이 차면 마감합니다.","formUrl":"","scheduleTitle":"2027년 1월 교육 일정","scheduleNote":"한가닥, 항암, 가발 베이직, 붙임머리는 단과반 신청 가능합니다.","sessions":[{"date":"1월 4일 (월)","row":"원데이","title":"원데이","time":"10:00–16:00"},{"date":"1월 4일 (월)","row":"마스터","title":"1회차","time":"10:00–16:00"},{"date":"1월 11일 (월)","row":"마스터","title":"2회차","time":"10:00–15:00"},{"date":"1월 18일 (월)","row":"마스터","title":"3회차","time":"10:00–15:00"},{"date":"1월 4일 (월)","row":"그랜드마스터","title":"1회차","time":"10:00–16:00"},{"date":"1월 11일 (월)","row":"그랜드마스터","title":"2회차","time":"10:00–15:00"},{"date":"1월 18일 (월)","row":"그랜드마스터","title":"3회차","time":"10:00–15:00"},{"date":"1월 18일 (월)","row":"그랜드마스터","title":"한가닥증모술","time":"15:30–18:30"},{"date":"1월 25일 (월)","row":"그랜드마스터","title":"항암증모술","time":"10:00–13:00"},{"date":"1월 25일 (월)","row":"그랜드마스터","title":"가발 베이직","time":"14:00–17:00"},{"date":"1월 25일 (월)","row":"단과반 붙임머리","title":"붙임머리","time":"15:30–18:30"}],"courses":[{"name":"콜로소 온라인 코스","tag":"","meta":"10강","target":"증모술 입문자, 거리상 방문이 어려운 분","curriculum":"기본 이론과 시술 이해\n세부 강의는 콜로소 홈페이지 참고","price":"","priceText":"콜로소 홈페이지 참고","priceNote":"재료비 별도"},{"name":"원데이 코스","tag":"","meta":"1회 · 6시간","target":"붙임머리 전문점 운영자, 증모술 경험자,\n배움이 빠르고 실행력과 응용력이 좋은 분","curriculum":"증모술의 종류와 특징, 헤어핏 매듭법\n남녀 M자 이마 커버와 앞머리 디자인","price":"90","priceText":"","priceNote":""},{"name":"마스터 코스","tag":"","meta":"3회 · 16시간","target":"증모술이 처음인 분께 추천합니다.\n현장 노하우를 배우고 수료 후 실전 피드백을 받을 수 있습니다.","curriculum":"1회차|헤어핏 증모술의 특징과 매듭 실습, M자 이마와 앞머리 디자인 완성\n2회차|중·말기 M자 탈모 실습, 범위별·스타일별 시술법, 견인성 탈모 이해와 스타일링\n3회차|고객 상담과 사후관리, 실제 모델 시연, 살롱 가격 매뉴얼 제작","price":"270","priceText":"","priceNote":""},{"name":"그랜드마스터 코스","tag":"탈모 올인원 코스","meta":"4회 · 25시간","target":"헤어핏 마스터에 항암증모술·한올증모술·부분가발을 더한 탈모 커버 올인원 과정","curriculum":"마스터 코스 1·2·3회차\n항암증모술, 한올 매듭 실습\n남녀 부분가발 입문과 M자 패치 제작","price":"396","priceText":"","priceNote":"마스터 270만원 + 단과 3과목 170만원 = 440만원\n전체 교육비 10% 할인 (44만원 할인)"}],"shortCourses":"한올증모술 · 항암증모술 · 가발 베이직 · 붙임머리","feeNote":"오프라인 교육비는 부가세 별도입니다. 콜로소를 제외한 모든 교육에는 재료비가 포함되어 있습니다.","benefits":[{"k":"콜로소 수강 후 오프라인 신청","v":"원데이 10만원 · 마스터 20만원 할인 (영수증 지참)"},{"k":"마스터 수료","v":"재교육 20만원"},{"k":"그랜드마스터 수료","v":"무료 재교육 1회"}],"info":[{"k":"신청 방법","v":"신청서 작성 후 입금 순으로 접수"},{"k":"교육 장소","v":"경기도 성남시 분당구 정자동 17-5 시그마타워 2층"},{"k":"취소 및 변경","v":"교육일 30일 전까지 가능"},{"k":"교육 후 상담","v":"수료 후에도 실제 시술에 대해 상담하실 수 있습니다."}],"depositText":"마스터 코스 선입금 50만원 · 입금순 신청 마감 · 차액은 현장 결제","bank":"농협","account":"352-1469-2998-73","holder":"양승욱"}</script><script id="app">
+(function(){
+var S=JSON.parse(document.getElementById('state').textContent);
+var root=document.getElementById('root');
+var artifactApi=null,canEdit=false;
+function esc(v){return String(v==null?'':v).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function uniq(a){var o=[];a.forEach(function(x){if(x&&o.indexOf(x)<0)o.push(x)});return o}
+function lines(t){return String(t||'').split('\n').map(function(x){return x.trim()}).filter(Boolean)}
+function formOk(){return /^https:\/\/\S+$/.test((S.formUrl||'').trim())}
+function applyBtn(cls){
+  if(formOk())return '<a class="btn '+(cls||'')+'" href="'+esc(S.formUrl.trim())+'" target="_blank" rel="noopener">신청서 작성하기</a>';
+  return '<span class="btn off '+(cls||'')+'" aria-disabled="true">신청서 준비 중</span>';
+}
+function won(n){var v=Math.round(n*10)/10;return (v%1===0?v.toFixed(0):v.toFixed(1))+'만원'}
+function schedule(){
+  var dates=uniq(S.sessions.map(function(s){return s.date})),rows=uniq(S.sessions.map(function(s){return s.row}));
+  var h='<div class="sch-wrap"><table class="sch"><thead><tr><th scope="col">교육과정</th>'+dates.map(function(d){return '<th scope="col">'+esc(d)+'</th>'}).join('')+'</tr></thead><tbody>';
+  rows.forEach(function(r){
+    h+='<tr'+(/^단과/.test(r)?' class="dan"':'')+'><th scope="row">'+esc(r)+'</th>';
+    dates.forEach(function(d){
+      var c=S.sessions.filter(function(s){return s.row===r&&s.date===d});
+      h+='<td>'+(c.length?c.map(function(s){return '<div class="cell">'+(s.title&&s.title!==r.replace(/^단과반\s*/,'')||!/^단과/.test(r)?'<b>'+esc(s.title)+'</b>':'')+'<span>'+esc(s.time)+'</span></div>'}).join(''):'<span class="none">—</span>')+'</td>';
+    });
+    h+='</tr>';
+  });
+  h+='</tbody></table></div><div class="days">';
+  dates.forEach(function(d){
+    h+='<div class="day"><h3>'+esc(d)+'</h3><ul>'+S.sessions.filter(function(s){return s.date===d}).map(function(s){
+      return '<li'+(/^단과/.test(s.row)?' class="dan"':'')+'><div><b>'+esc(s.row)+'</b><em>'+esc(s.title)+'</em></div><span>'+esc(s.time)+'</span></li>'}).join('')+'</ul></div>';
+  });
+  return h+'</div>';
+}
+function courses(){
+  return '<div class="courses">'+S.courses.map(function(c){
+    var cur=lines(c.curriculum).map(function(l){var i=l.indexOf('|');return i>0?'<li><b>'+esc(l.slice(0,i).trim())+'</b><span>'+esc(l.slice(i+1).trim())+'</span></li>':'<li><span>'+esc(l)+'</span></li>'}).join('');
+    var p=parseFloat(c.price),price='';
+    if(c.priceText)price='<strong style="font-size:18px">'+esc(c.priceText)+'</strong>';
+    else if(!isNaN(p))price='<strong>'+won(p)+'</strong><span class="vat">부가세 포함 '+won(p*1.1)+'</span>';
+    return '<article class="course"><h3>'+esc(c.name)+(c.tag?'<small>'+esc(c.tag)+'</small>':'')+'</h3>'+(c.meta?'<span class="chip">'+esc(c.meta)+'</span>':'')+
+      (c.target?'<p class="target">'+esc(c.target)+'</p>':'')+(cur?'<ul>'+cur+'</ul>':'')+
+      '<div class="price">'+price+(c.priceNote?'<p>'+esc(c.priceNote)+'</p>':'')+'</div></article>';
+  }).join('')+'</div>';
+}
+function kv(list){
+  return '<dl class="kv">'+list.map(function(x){
+    var extra=/장소|주소/.test(x.k)&&x.v?' <a href="https://map.naver.com/p/search/'+encodeURIComponent(x.v)+'" target="_blank" rel="noopener">지도 보기</a>':'';
+    return '<div><dt>'+esc(x.k)+'</dt><dd>'+esc(x.v)+extra+'</dd></div>'}).join('')+'</dl>';
+}
+function render(){
+  document.title=(S.cohort?S.cohort+' ':'')+S.title+' 안내';
+  var acct=[S.bank,S.account,S.holder].filter(Boolean).join(' ');
+  root.innerHTML=
+  (S.notice?'<div class="notice">'+esc(S.notice)+'</div>':'')+
+  '<header class="hero"><div class="wrap"><div class="brand">'+esc(S.brand)+'</div><h1>'+(S.cohort?'<span>'+esc(S.cohort)+'</span> ':'')+esc(S.title)+'</h1>'+
+    '<p class="intro">'+esc(S.intro)+'</p>'+(S.sign?'<p class="sign">'+esc(S.sign)+'</p>':'')+
+    '<div class="cta-row">'+applyBtn()+'<a class="btn ghost" href="#schedule">일정 먼저 보기</a></div></div></header>'+
+  '<nav class="tabs" aria-label="바로가기"><div class="wrap"><a href="#schedule">일정</a><a href="#courses">과정·교육비</a><a href="#benefits">혜택·이용 안내</a><a href="#apply">신청</a></div></nav>'+
+  '<main class="wrap">'+
+  '<section id="schedule"><h2>'+esc(S.scheduleTitle)+'</h2>'+schedule()+(S.scheduleNote?'<p class="note">'+esc(S.scheduleNote)+'</p>':'')+'</section>'+
+  '<section id="courses"><h2>교육과정과 교육비</h2>'+(S.feeNote?'<p class="lead">'+esc(S.feeNote)+'</p>':'')+courses()+(S.shortCourses?'<p class="short"><b>단과반</b>'+esc(S.shortCourses)+'</p>':'')+'</section>'+
+  '<section id="benefits"><div class="two"><div><h2>수강 혜택</h2>'+kv(S.benefits)+'</div><div><h2 style="margin-top:0">신청 및 이용 안내</h2>'+kv(S.info)+'</div></div></section>'+
+  '<section id="apply"><h2>신청 방법</h2><ol class="steps">'+
+    '<li><b>과정 선택</b><p>일정과 교육과정을 확인하고 수강할 과정을 정합니다.</p></li>'+
+    '<li><b>신청서 작성</b><p>살롱명, 성함, 영문 성함, 휴대폰 번호를 적어 제출합니다.</p></li>'+
+    '<li><b>신청금 입금</b><p>아래 계좌로 신청금을 입금합니다. 입금 순으로 접수합니다.</p></li>'+
+    '<li><b>접수 확정</b><p>입금 확인 후 접수가 확정되며, 차액은 현장에서 결제합니다.</p></li></ol>'+
+    (acct?'<div class="deposit"><div><p>'+esc(S.depositText)+'</p><div class="acct">'+esc(acct)+'</div></div><button type="button" class="btn ghost sm" id="copy">계좌번호 복사</button></div>':'')+
+    '<div class="apply-box">'+applyBtn()+'<p>'+(formOk()?'버튼을 누르면 구글 신청서가 새 창으로 열립니다.':'신청서를 준비하고 있습니다. 곧 열립니다.')+'</p></div></section>'+
+  '</main>'+
+  '<footer><div class="wrap">'+esc(S.brand)+' · '+esc(S.title)+'<button type="button" id="editBtn" hidden>내용 수정</button></div></footer>'+
+  '<div class="bar"><span>'+esc((S.cohort?S.cohort+' ':'')+S.title)+'</span>'+applyBtn()+'</div>'+
+  '<div class="ed" id="ed" hidden></div>';
+  var cp=document.getElementById('copy');
+  if(cp)cp.addEventListener('click',function(){
+    try{navigator.clipboard.writeText(S.account).then(function(){cp.textContent='복사했습니다'},function(){cp.textContent=S.account})}catch(e){cp.textContent=S.account}
+  });
+  var eb=document.getElementById('editBtn');eb.hidden=!canEdit;eb.addEventListener('click',openEditor);
+}
+/* ---------- editor ---------- */
+var SCHEMA=[
+ {sec:'기본 정보',fields:[['cohort','기수'],['title','제목'],['intro','인사말','ta'],['sign','서명'],['notice','맨 위 공지 (비우면 숨김)'],['formUrl','구글 신청서 링크 (https://로 시작)']]},
+ {sec:'교육 일정',fields:[['scheduleTitle','일정 제목'],['scheduleNote','일정 아래 안내 문구']],list:{key:'sessions',label:'수업',item:[['date','날짜'],['row','과정'],['title','수업명'],['time','시간']]},hint:'날짜와 과정 이름이 같은 수업끼리 표의 같은 칸에 모입니다. 표의 순서는 위에서 처음 나온 순서를 따릅니다.'},
+ {sec:'교육과정과 교육비',fields:[['feeNote','교육비 안내 문구','ta'],['shortCourses','단과반 과목']],list:{key:'courses',label:'과정',item:[['name','과정명'],['tag','부제'],['meta','횟수·시간'],['price','교육비 (만원, 숫자만)'],['priceText','숫자 대신 보여줄 문구'],['target','추천 대상','ta'],['curriculum','커리큘럼 (한 줄에 하나, 예: 1회차|내용)','ta'],['priceNote','교육비 설명','ta']]},hint:'교육비에 숫자를 넣으면 부가세 포함 금액을 자동으로 계산해 함께 보여줍니다.'},
+ {sec:'수강 혜택',list:{key:'benefits',label:'혜택',item:[['k','항목'],['v','내용']]}},
+ {sec:'신청 및 이용 안내',list:{key:'info',label:'안내',item:[['k','항목'],['v','내용']]}},
+ {sec:'입금 안내',fields:[['depositText','안내 문구','ta'],['bank','은행'],['account','계좌번호'],['holder','예금주']]}
+];
+var D=null,openSec=0;
+function field(path,def,val){
+  var id='f_'+path.replace(/\W/g,'_');
+  return '<div><label for="'+id+'">'+esc(def[1])+'</label>'+(def[2]==='ta'?'<textarea id="'+id+'" data-p="'+path+'">'+esc(val)+'</textarea>':'<input id="'+id+'" data-p="'+path+'" value="'+esc(val)+'">')+'</div>';
+}
+function drawEditor(msg,err){
+  var ed=document.getElementById('ed');
+  var h='<div class="panel" role="dialog" aria-label="내용 수정"><div class="top"><b>내용 수정</b><span class="msg'+(err?' err':'')+'" id="edmsg">'+esc(msg||'')+'</span><span style="display:flex;gap:8px"><button type="button" class="btn ghost sm" id="edClose">닫기</button><button type="button" class="btn sm" id="edSave">저장</button></span></div><div class="body">';
+  SCHEMA.forEach(function(sc,si){
+    h+='<details data-si="'+si+'"'+(si===openSec?' open':'')+'><summary>'+esc(sc.sec)+'</summary>';
+    if(sc.hint)h+='<p class="msg" style="margin-top:8px">'+esc(sc.hint)+'</p>';
+    (sc.fields||[]).forEach(function(f){h+=field(f[0],f,D[f[0]])});
+    if(sc.list){
+      D[sc.list.key].forEach(function(it,i){
+        h+='<div class="item"><div class="row">';
+        sc.list.item.filter(function(f){return f[2]!=='ta'}).forEach(function(f){h+=field(sc.list.key+'.'+i+'.'+f[0],f,it[f[0]])});
+        h+='</div>';
+        sc.list.item.filter(function(f){return f[2]==='ta'}).forEach(function(f){h+=field(sc.list.key+'.'+i+'.'+f[0],f,it[f[0]])});
+        h+='<div class="tools"><button type="button" data-act="up" data-k="'+sc.list.key+'" data-i="'+i+'">위로</button><button type="button" data-act="down" data-k="'+sc.list.key+'" data-i="'+i+'">아래로</button><button type="button" data-act="del" data-k="'+sc.list.key+'" data-i="'+i+'">삭제</button></div></div>';
+      });
+      h+='<button type="button" class="add" data-act="add" data-k="'+sc.list.key+'">+ '+esc(sc.list.label)+' 추가</button>';
+    }
+    h+='</details>';
+  });
+  ed.innerHTML=h+'</div></div>';
+}
+function openEditor(){D=JSON.parse(JSON.stringify(S));drawEditor('수정한 뒤 저장을 누르면 모든 방문자에게 반영됩니다.');document.getElementById('ed').hidden=false}
+function buildDoc(state){
+  var json=JSON.stringify(state).replace(/</g,'\\u003c');
+  return '<!DOCTYPE html>\n<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>'+esc((state.cohort?state.cohort+' ':'')+state.title+' 안내')+'</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet"><style id="css">'+document.getElementById('css').textContent+'</style></head><body><div id="root"></div><script id="state" type="application/json">'+json+'<\/script><script id="app">'+document.getElementById('app').textContent+'<\/script></body></html>';
+}
+function save(){
+  var url=(D.formUrl||'').trim();
+  if(url&&!/^https:\/\/\S+$/.test(url)){openSec=0;drawEditor('신청서 링크는 https://로 시작해야 합니다. 링크를 고친 뒤 다시 저장해 주세요.',true);return}
+  D.formUrl=url;
+  if(!artifactApi){drawEditor('이 화면에서는 저장할 수 없습니다. Claude에서 페이지를 연 뒤 다시 시도해 주세요.',true);return}
+  var btn=document.getElementById('edSave');btn.disabled=true;document.getElementById('edmsg').textContent='저장하는 중입니다…';
+  artifactApi.publish(buildDoc(D)).then(function(){S=D;render()},function(e){
+    var code=(e&&(e.code||e.message))||'';
+    var m=/not_granted|not_writer/.test(code)?'수정 권한이 없는 계정입니다. 페이지 소유자 계정으로 열어 주세요.':/conflict/.test(code)?'다른 곳에서 먼저 저장되어 이번 수정은 반영되지 않았습니다. 새로 열린 내용에서 다시 수정해 주세요.':'저장하지 못했습니다. 잠시 뒤 다시 저장해 주세요.';
+    drawEditor(m,true);
+  });
+}
+root.addEventListener('input',function(e){
+  var p=e.target.getAttribute&&e.target.getAttribute('data-p');if(!p||!D)return;
+  var a=p.split('.');if(a.length===1)D[a[0]]=e.target.value;else D[a[0]][+a[1]][a[2]]=e.target.value;
+});
+root.addEventListener('toggle',function(e){if(e.target.tagName==='DETAILS'&&e.target.open)openSec=+e.target.getAttribute('data-si')},true);
+root.addEventListener('click',function(e){
+  var t=e.target;if(!t.closest||!t.closest('#ed'))return;
+  if(t.id==='edClose'||t.id==='ed'){document.getElementById('ed').hidden=true;D=null;return}
+  if(t.id==='edSave'){save();return}
+  var act=t.getAttribute('data-act');if(!act)return;
+  var k=t.getAttribute('data-k'),i=+t.getAttribute('data-i'),L=D[k];
+  if(act==='add'){var o={};SCHEMA.forEach(function(sc){if(sc.list&&sc.list.key===k)sc.list.item.forEach(function(f){o[f[0]]=''})});L.push(o)}
+  if(act==='del')L.splice(i,1);
+  if(act==='up'&&i>0)L.splice(i-1,0,L.splice(i,1)[0]);
+  if(act==='down'&&i<L.length-1)L.splice(i+1,0,L.splice(i,1)[0]);
+  var sc=document.querySelector('#ed .body').scrollTop;drawEditor('');document.querySelector('#ed .body').scrollTop=sc;
+});
+render();
+if(window.claude&&typeof window.claude.use==='function'){
+  Promise.all([window.claude.use('artifact'),window.claude.use('user')]).then(function(r){
+    artifactApi=r[0];var u=r[1];
+    if(!artifactApi)return;
+    return Promise.resolve(u?u.canEdit():true).then(function(ok){canEdit=!!ok;var eb=document.getElementById('editBtn');if(eb)eb.hidden=!canEdit});
+  }).catch(function(){});
+}
+})();
+</script></body></html>
